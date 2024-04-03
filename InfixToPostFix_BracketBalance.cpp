@@ -148,7 +148,7 @@ int getPrecedence(char op) {
 }
 
 // Function to convert infix expression to postfix
-void infixToPostfix(char infix[], char postfix[], bool debug=0) {
+void infixToPostfix(char infix[], char postfix[], bool debug=false) {
     stack operatorStack;
     int i = 0, j = 0;
 
@@ -189,10 +189,7 @@ void infixToPostfix(char infix[], char postfix[], bool debug=0) {
 int main() {
 
 
-    char input[] = "a+b/a+b(b+c*c)/d+c/c-c*d ";
-    char postfix[CAPAC], KnownVariables[CAPAC], finalEquation[CAPAC*10];
-    Variable mVars[CAPAC];
-    int varCount=0;
+    char input[] = "a+b/a+b(b+c*c)/d+c/c-c*d ", postfix[CAPAC];
 
     if (!bracketBalancing(input)){
         cout << "Unbalanced";
